@@ -42,7 +42,7 @@ This eCommerce project is a modern web application built with React and Next.js,
 4. **Open the source code and start editing!**
 
     ```bash
-    code.
+    code .
     ```
 ## License
 
