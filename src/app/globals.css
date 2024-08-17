@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add this to your global CSS file or in a <style> tag */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .snap-center {
+    scroll-snap-align: center;
+  }
