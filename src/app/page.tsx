@@ -1,5 +1,6 @@
 import { Header } from "@/sections/Header";
 import HeroSection from "@/sections/Hero";
+import IndependentSellerSection from "@/sections/IndependentSellerSection";
 import MarketPlaceSection from "@/sections/MarketPlaceCardSection";
 import ProductShowcase from "@/sections/ProductCardSection";
 
@@ -10,5 +11,6 @@ export default function Home() {
   <HeroSection/>
   <ProductShowcase/>
   <MarketPlaceSection/>
+  <IndependentSellerSection/>
   </>);
 }
