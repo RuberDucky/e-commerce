@@ -8,7 +8,7 @@ interface IndependentSellerCardProps {
 
 const IndependentSellerCard: React.FC<IndependentSellerCardProps> = ({ imageSrc, title, imageSize }) => {
   return (
-    <div className="w-34 h-34 rounded-lg bg-white flex flex-col items-center justify-center shadow-md">
+    <div className="w-34 h-37 rounded-lg bg-white flex flex-col items-center justify-center shadow-md">
       <img 
         src={imageSrc} 
         alt={title} 
