@@ -4,43 +4,85 @@ import IndependentSellerCard from "@/components/IndependentSellerCard"; // Adjus
 
 const IndependentSellerSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerScreen, setItemsPerScreen] = useState(2);
   const scrollRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const sellers = [
     {
+      imageSrc: "https://picsum.photos/id/684/600/400",
+      title: "Blanket",
+    },
+    {
+      imageSrc: "https://picsum.photos/id/657/600/400",
+      title: "Data",
+    },
+    {
+      imageSrc: "https://picsum.photos/id/688/600/400",
+      title: "Camera",
+    },
+    {
+      imageSrc: "https://picsum.photos/id/689/600/400",
+      title: "Random",
+    },
+    {
+      imageSrc: "https://picsum.photos/id/690/600/400",
+      title: "Image",
+    },
+    {
+      imageSrc: "https://picsum.photos/id/691/600/400",
+      title: "Scenes",
+    },
+    {
+      imageSrc: "https://picsum.photos/id/692/600/400",
+      title: "Image",
+    },
+    {
       imageSrc:
-        "https://images.pexels.com/photos/1248583/pexels-photo-1248583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/1248583/pexels-photo-1248583.jpeg",
       title: "Throw Pillows",
     },
     {
       imageSrc:
-        "https://images.pexels.com/photos/26839105/pexels-photo-26839105/free-photo-of-handmade-vases-on-table.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/26839105/pexels-photo-26839105/free-photo-of-handmade-vases-on-table.jpeg",
       title: "Handmade Vases",
     },
     {
       imageSrc:
-        "https://images.pexels.com/photos/26605624/pexels-photo-26605624/free-photo-of-paintings-in-frames-hanging-at-the-exhibition-in-an-art-gallery.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/26605624/pexels-photo-26605624/free-photo-of-paintings-in-frames-hanging-at-the-exhibition-in-an-art-gallery.jpeg",
       title: "Custom Paintings",
     },
     {
       imageSrc:
-        "https://images.pexels.com/photos/186844/pexels-photo-186844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/186844/pexels-photo-186844.jpeg",
       title: "Artistic Lamps",
     },
     {
       imageSrc:
-        "https://images.pexels.com/photos/4040599/pexels-photo-4040599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/4040599/pexels-photo-4040599.jpeg",
       title: "Unique Jewelry",
     },
   ];
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setItemsPerScreen(4); // Large screens: 4 items per row
+      else if (window.innerWidth >= 768) setItemsPerScreen(3); // Tablet screens: 3 items per row
+      else setItemsPerScreen(2); // Mobile screens: 2 items per row
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleScroll = () => {
     if (scrollRef.current) {
       const scrollLeft = scrollRef.current.scrollLeft;
       const width = scrollRef.current.clientWidth;
-      const itemWidth =
-        scrollRef.current.querySelector("div")?.clientWidth || width;
+      const itemWidth = width / itemsPerScreen; // Adjust based on the number of items per screen
       const newIndex = Math.round(scrollLeft / itemWidth);
       if (newIndex !== currentIndex && newIndex < sellers.length) {
         setCurrentIndex(newIndex);
@@ -82,8 +124,8 @@ const IndependentSellerSection: React.FC = () => {
   }, [currentIndex, sellers.length]);
 
   const getVisibleIndicators = () => {
-    const maxVisible = 3;
-    const start = Math.max(0, currentIndex - 1);
+    const maxVisible = itemsPerScreen;
+    const start = Math.max(0, currentIndex - Math.floor(maxVisible / 2));
     const end = Math.min(start + maxVisible, sellers.length);
 
     return sellers.slice(start, end);
@@ -97,26 +139,22 @@ const IndependentSellerSection: React.FC = () => {
           Explore products from independent sellers
         </p>
       </div>
-
-      {/* Scrollable View for All Devices */}
+      {/* Scrollable View */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-scroll space-x-4 justify-center scrollbar-hide snap-x snap-mandatory gap-4 px-4 md:px-8"
-        style={{ paddingLeft: "16px", paddingRight: "16px" }} // Add padding to ensure first and last items are fully visible
+        className="flex overflow-x-auto snap-x gap-4 snap-mandatory scrollbar-hide px-4 md:px-8"
+        style={{ scrollSnapType: 'x mandatory', height: '180px' }} // Increased height
       >
         {sellers.map((seller, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-[150px] h-[150px] snap-center"
-            style={{
-              marginLeft: index === 0 ? "8px" : 0,
-              marginRight: index === sellers.length - 1 ? "8px" : 0,
-            }} // Ensure first and last items are visible
+            className="flex-shrink-0 snap-center"
+            style={{ width: '140px', height: '140px' }} // Container size
           >
             <IndependentSellerCard
               imageSrc={seller.imageSrc}
               title={seller.title}
-              imageSize={120}
+              imageSize={120} // Image size
             />
           </div>
         ))}
@@ -127,7 +165,7 @@ const IndependentSellerSection: React.FC = () => {
         {getVisibleIndicators().map((_, index) => (
           <div
             key={index}
-            className={`h-3 w-3 rounded-full mx-1 ${currentIndex === index + Math.max(0, currentIndex - 1)
+            className={`h-3 w-3 rounded-full mx-1 ${currentIndex === index
                 ? "bg-[#EB8426]"
                 : "bg-gray-400"
               }`}

@@ -19,3 +19,14 @@
   .snap-center {
     scroll-snap-align: center;
   }
+
+
+  /* styles/globals.css or any global CSS file */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
+}
