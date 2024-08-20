@@ -39,7 +39,8 @@ const IndependentSellerSection: React.FC = () => {
     if (scrollRef.current) {
       const scrollLeft = scrollRef.current.scrollLeft;
       const width = scrollRef.current.clientWidth;
-      const itemWidth = scrollRef.current.querySelector("div")?.clientWidth || width;
+      const itemWidth =
+        scrollRef.current.querySelector("div")?.clientWidth || width;
       const newIndex = Math.round(scrollLeft / itemWidth);
       if (newIndex !== currentIndex && newIndex < sellers.length) {
         setCurrentIndex(newIndex);
@@ -107,7 +108,10 @@ const IndependentSellerSection: React.FC = () => {
           <div
             key={index}
             className="flex-shrink-0 w-[150px] h-[150px] snap-center"
-            style={{ marginLeft: index === 0 ? "8px" : 0, marginRight: index === sellers.length - 1 ? "8px" : 0 }} // Ensure first and last items are visible
+            style={{
+              marginLeft: index === 0 ? "8px" : 0,
+              marginRight: index === sellers.length - 1 ? "8px" : 0,
+            }} // Ensure first and last items are visible
           >
             <IndependentSellerCard
               imageSrc={seller.imageSrc}
@@ -123,11 +127,10 @@ const IndependentSellerSection: React.FC = () => {
         {getVisibleIndicators().map((_, index) => (
           <div
             key={index}
-            className={`h-3 w-3 rounded-full mx-1 ${
-              currentIndex === index + Math.max(0, currentIndex - 1)
+            className={`h-3 w-3 rounded-full mx-1 ${currentIndex === index + Math.max(0, currentIndex - 1)
                 ? "bg-[#EB8426]"
                 : "bg-gray-400"
-            }`}
+              }`}
           />
         ))}
       </div>
