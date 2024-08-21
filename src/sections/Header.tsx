@@ -12,11 +12,7 @@ export const Header = () => {
     <header className="sticky top-0 bg-[#FFF9F3] backdrop-blur-md z-50">
       {/* Top row */}
       <div className="container mx-auto px-4 py-2 flex justify-between items-center lg:justify-center">
-        <Image
-          src={Logo}
-          alt="Logo"
-          className="h-10 w-32 md:h-12 md:w-36"
-        />
+        <Image src={Logo} alt="Logo" className="h-10 w-32 md:h-12 md:w-36" />
 
         {/* Search Bar for Desktop View */}
         <div className="hidden lg:flex flex-1 justify-center mx-4">
@@ -65,11 +61,7 @@ export const Header = () => {
       {/* Bottom row for mobile view */}
       <div className="container mx-auto px-4 py-2 lg:hidden flex items-center justify-between">
         <div className="flex items-center justify-center bg-white rounded-full h-12 w-12">
-          <Image
-            src={HamburgerMenu}
-            alt="Hamburger Menu"
-            className="h-6 w-6"
-          />
+          <Image src={HamburgerMenu} alt="Hamburger Menu" className="h-6 w-6" />
         </div>
         <div className="flex-1 ml-2 relative">
           <input

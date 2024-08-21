@@ -5,14 +5,15 @@ import IndependentSellerSection from "@/sections/IndependentSellerSection";
 import MarketPlaceSection from "@/sections/MarketPlaceCardSection";
 import ProductShowcase from "@/sections/ProductCardSection";
 
-
 export default function Home() {
-  return( <>
-  <Header/>
-  <HeroSection/>
-  <ProductShowcase/>
-  <MarketPlaceSection/>
-  <IndependentSellerSection/>
-  <HandPickItemsSection/>
-  </>);
+  return (
+    <>
+      <Header />
+      <HeroSection />
+      <ProductShowcase />
+      <MarketPlaceSection />
+      <IndependentSellerSection />
+      <HandPickItemsSection />
+    </>
+  );
 }
