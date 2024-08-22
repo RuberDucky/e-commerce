@@ -1,7 +1,7 @@
 // components/MarketPlaceSection.tsx
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
-import MarketPlaceCard from '@/components/MarketPlaceCard';
+import React, { useState, useEffect, useRef } from "react";
+import MarketPlaceCard from "@/components/MarketPlaceCard";
 
 const MarketPlaceSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,19 +9,25 @@ const MarketPlaceSection: React.FC = () => {
 
   const marketPlaceItems = [
     {
-      imageSrc: 'https://images.pexels.com/photos/4846437/pexels-photo-4846437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      title: 'Elegant Sofa Set',
-      description: 'Transform your living room with this stylish and comfortable sofa set. Perfect for any modern home.'
+      imageSrc:
+        "https://images.pexels.com/photos/4846437/pexels-photo-4846437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "Elegant Sofa Set",
+      description:
+        "Transform your living room with this stylish and comfortable sofa set. Perfect for any modern home.",
     },
     {
-      imageSrc: 'https://images.pexels.com/photos/4846433/pexels-photo-4846433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      title: 'Artistic Wall Decor',
-      description: 'Add a touch of sophistication to your walls with our unique and artistic wall decor. Ideal for contemporary spaces.'
+      imageSrc:
+        "https://images.pexels.com/photos/4846433/pexels-photo-4846433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "Artistic Wall Decor",
+      description:
+        "Add a touch of sophistication to your walls with our unique and artistic wall decor. Ideal for contemporary spaces.",
     },
     {
-      imageSrc: 'https://images.pexels.com/photos/4202322/pexels-photo-4202322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      title: 'Modern Table Lamp',
-      description: 'Illuminate your room with this sleek and modern table lamp. A perfect blend of functionality and style for any room.'
+      imageSrc:
+        "https://images.pexels.com/photos/4202322/pexels-photo-4202322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "Modern Table Lamp",
+      description:
+        "Illuminate your room with this sleek and modern table lamp. A perfect blend of functionality and style for any room.",
     },
     // Add more items as needed
   ];
@@ -38,8 +44,8 @@ const MarketPlaceSection: React.FC = () => {
   useEffect(() => {
     const scrollElement = scrollRef.current;
     if (scrollElement) {
-      scrollElement.addEventListener('scroll', handleScroll);
-      return () => scrollElement.removeEventListener('scroll', handleScroll);
+      scrollElement.addEventListener("scroll", handleScroll);
+      return () => scrollElement.removeEventListener("scroll", handleScroll);
     }
   }, []);
 
@@ -81,7 +87,9 @@ const MarketPlaceSection: React.FC = () => {
         {marketPlaceItems.map((_, index) => (
           <div
             key={index}
-            className={`h-3 w-3 rounded-full mx-1 ${currentIndex === index ? "bg-[#EB8426]" : "bg-gray-400"}`}
+            className={`h-3 w-3 rounded-full mx-1 ${
+              currentIndex === index ? "bg-[#EB8426]" : "bg-gray-400"
+            }`}
           />
         ))}
       </div>

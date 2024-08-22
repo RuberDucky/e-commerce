@@ -16,9 +16,9 @@ const config: Config = {
       },
       screens: {
         // Define custom breakpoints here
-        'md': '768px',  // Tablet view
-        'lg': '1024px', // Desktop view
-        'xl': '1280px', // Extra large screens (if needed)
+        md: "768px", // Tablet view
+        lg: "1024px", // Desktop view
+        xl: "1280px", // Extra large screens (if needed)
       },
     },
   },

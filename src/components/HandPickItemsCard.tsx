@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 interface HandPickItemsCardProps {
   imageSrc: string;
@@ -7,7 +7,11 @@ interface HandPickItemsCardProps {
   price: string;
 }
 
-const HandPickItemsCard: React.FC<HandPickItemsCardProps> = ({ imageSrc, title, price }) => {
+const HandPickItemsCard: React.FC<HandPickItemsCardProps> = ({
+  imageSrc,
+  title,
+  price,
+}) => {
   return (
     <div className="w-40 h-[290px] rounded-lg bg-white flex flex-col items-center justify-between shadow-md p-4">
       <div className="relative w-full h-3/5">

@@ -10,44 +10,44 @@ const HandPickItemsSection: React.FC = () => {
   // Sample data for items
   const items = [
     {
-      imageSrc: 'https://picsum.photos/id/284/600/400',
-      title: 'Viejanut Hocaala',
-      price: '$10.00',
+      imageSrc: "https://picsum.photos/id/284/600/400",
+      title: "Viejanut Hocaala",
+      price: "$10.00",
     },
     {
-      imageSrc: 'https://picsum.photos/id/385/600/400',
-      title: 'Luozibuh Hocaala',
-      price: '$20.00',
+      imageSrc: "https://picsum.photos/id/385/600/400",
+      title: "Luozibuh Hocaala",
+      price: "$20.00",
     },
     {
-      imageSrc: 'https://picsum.photos/id/386/600/400',
-      title: 'Gatooza Hocaala',
-      price: '$30.00',
+      imageSrc: "https://picsum.photos/id/386/600/400",
+      title: "Gatooza Hocaala",
+      price: "$30.00",
     },
     {
-      imageSrc: 'https://picsum.photos/id/287/600/400',
-      title: 'Timsubef',
-      price: '$40.00',
+      imageSrc: "https://picsum.photos/id/287/600/400",
+      title: "Timsubef",
+      price: "$40.00",
     },
     {
-      imageSrc: 'https://picsum.photos/id/288/600/400',
-      title: 'Tialjip Hocaala',
-      price: '$50.00',
+      imageSrc: "https://picsum.photos/id/288/600/400",
+      title: "Tialjip Hocaala",
+      price: "$50.00",
     },
     {
-      imageSrc: 'https://picsum.photos/id/289/600/400',
-      title: 'Item 6 Hocaala',
-      price: '$60.00',
+      imageSrc: "https://picsum.photos/id/289/600/400",
+      title: "Item 6 Hocaala",
+      price: "$60.00",
     },
     {
-      imageSrc: 'https://picsum.photos/id/290/600/400',
-      title: 'Hocaala Hocaala',
-      price: '$70.00',
+      imageSrc: "https://picsum.photos/id/290/600/400",
+      title: "Hocaala Hocaala",
+      price: "$70.00",
     },
     {
-      imageSrc: 'https://picsum.photos/id/291/600/400',
-      title: 'Hocaala Hocaala',
-      price: '$80.00',
+      imageSrc: "https://picsum.photos/id/291/600/400",
+      title: "Hocaala Hocaala",
+      price: "$80.00",
     },
     // Add more items as needed
   ];
@@ -115,7 +115,10 @@ const HandPickItemsSection: React.FC = () => {
   }, [currentIndex, items.length, isMobileOrTablet]);
 
   return (
-    <div ref={sectionRef} className="container mx-auto my-8 px-2 md:py-0 relative">
+    <div
+      ref={sectionRef}
+      className="container mx-auto my-8 px-2 md:py-0 relative"
+    >
       {/* Section Title */}
       <div className="text-center mb-6">
         <h2 className="text-lg font-bold text-gray-800">HandPick Item</h2>
@@ -147,8 +150,9 @@ const HandPickItemsSection: React.FC = () => {
         {items.map((_, index) => (
           <div
             key={index}
-            className={`h-3 w-3 rounded-full mx-1 ${currentIndex === index ? "bg-[#EB8426]" : "bg-gray-400"
-              }`}
+            className={`h-3 w-3 rounded-full mx-1 ${
+              currentIndex === index ? "bg-[#EB8426]" : "bg-gray-400"
+            }`}
           />
         ))}
       </div>
@@ -169,7 +173,11 @@ const HandPickItemsSection: React.FC = () => {
                 stroke="currentColor"
                 className="w-6 h-6 text-gray-800"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </div>
           </div>
@@ -186,7 +194,11 @@ const HandPickItemsSection: React.FC = () => {
                 stroke="currentColor"
                 className="w-6 h-6 text-gray-800"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </div>
           </div>

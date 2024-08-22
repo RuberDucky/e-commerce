@@ -10,9 +10,24 @@ const ProductShowcase: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const products = [
-    { imageSrc: sofaImg, bgColor: "#D9ABFD", title: "Vonna Neva Walnut Sandalye Chair", price: "195,13 $" },
-    { imageSrc: chairImg, bgColor: "#D3FBD9", title: "Vonna Neva Walnut Sandalye Chair", price: "195,13 $" },
-    { imageSrc: lampImg, bgColor: "#FBD9D9", title: "Vonna Neva Walnut Sandalye Chair", price: "195,13 $" },
+    {
+      imageSrc: sofaImg,
+      bgColor: "#D9ABFD",
+      title: "Vonna Neva Walnut Sandalye Chair",
+      price: "195,13 $",
+    },
+    {
+      imageSrc: chairImg,
+      bgColor: "#D3FBD9",
+      title: "Vonna Neva Walnut Sandalye Chair",
+      price: "195,13 $",
+    },
+    {
+      imageSrc: lampImg,
+      bgColor: "#FBD9D9",
+      title: "Vonna Neva Walnut Sandalye Chair",
+      price: "195,13 $",
+    },
   ];
 
   const handleScroll = () => {
@@ -35,7 +50,10 @@ const ProductShowcase: React.FC = () => {
   return (
     <div className="container mx-auto my-8 px-6">
       {/* Mobile view */}
-      <div ref={scrollRef} className="flex space-x-4 overflow-x-scroll md:hidden scrollbar-hide snap-x snap-mandatory px-4">
+      <div
+        ref={scrollRef}
+        className="flex space-x-4 overflow-x-scroll md:hidden scrollbar-hide snap-x snap-mandatory px-4"
+      >
         {products.map((product, index) => (
           <div key={index} className="flex-shrink-0 w-68 snap-center">
             <ProductCard
@@ -67,7 +85,9 @@ const ProductShowcase: React.FC = () => {
         {products.map((_, index) => (
           <div
             key={index}
-            className={`h-3 w-3 rounded-full mx-1 ${currentIndex === index ? "bg-[#EB8426]" : "bg-gray-400"}`}
+            className={`h-3 w-3 rounded-full mx-1 ${
+              currentIndex === index ? "bg-[#EB8426]" : "bg-gray-400"
+            }`}
           />
         ))}
       </div>

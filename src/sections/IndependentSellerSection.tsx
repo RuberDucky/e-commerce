@@ -65,18 +65,19 @@ const IndependentSellerSection: React.FC = () => {
     },
   ];
 
-
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) setItemsPerScreen(4); // Large screens: 4 items per row
-      else if (window.innerWidth >= 768) setItemsPerScreen(3); // Tablet screens: 3 items per row
+      if (window.innerWidth >= 1024)
+        setItemsPerScreen(4); // Large screens: 4 items per row
+      else if (window.innerWidth >= 768)
+        setItemsPerScreen(3); // Tablet screens: 3 items per row
       else setItemsPerScreen(2); // Mobile screens: 2 items per row
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -150,25 +151,28 @@ const IndependentSellerSection: React.FC = () => {
   };
 
   return (
-    <div ref={sectionRef} className="container mx-auto my-8 px-2 md:py-0 relative">
+    <div
+      ref={sectionRef}
+      className="container mx-auto my-8 px-2 md:py-0 relative"
+    >
       <div className="text-center mb-6">
         <h2 className="text-lg font-bold text-gray-800">Only on Polka</h2>
         <p className="text-sm text-gray-600">
           Explore products from independent sellers
         </p>
       </div>
-      
+
       {/* Scrollable View */}
       <div
         ref={scrollRef}
         className="flex overflow-x-auto snap-x gap-4 snap-mandatory scrollbar-hide px-4 md:px-8"
-        style={{ scrollSnapType: 'x mandatory', height: '180px' }} // Increased height
+        style={{ scrollSnapType: "x mandatory", height: "180px" }} // Increased height
       >
         {sellers.map((seller, index) => (
           <div
             key={index}
             className="flex-shrink-0 snap-center"
-            style={{ width: '140px', height: '140px' }} // Container size
+            style={{ width: "140px", height: "140px" }} // Container size
           >
             <IndependentSellerCard
               imageSrc={seller.imageSrc}
@@ -184,8 +188,9 @@ const IndependentSellerSection: React.FC = () => {
         {getVisibleIndicators().map((_, index) => (
           <div
             key={index}
-            className={`h-3 w-3 rounded-full mx-1 ${currentIndex === index ? "bg-[#EB8426]" : "bg-gray-400"
-              }`}
+            className={`h-3 w-3 rounded-full mx-1 ${
+              currentIndex === index ? "bg-[#EB8426]" : "bg-gray-400"
+            }`}
           />
         ))}
       </div>
@@ -206,7 +211,11 @@ const IndependentSellerSection: React.FC = () => {
                 stroke="currentColor"
                 className="w-6 h-6 text-gray-800"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </div>
           </div>
@@ -223,7 +232,11 @@ const IndependentSellerSection: React.FC = () => {
                 stroke="currentColor"
                 className="w-6 h-6 text-gray-800"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </div>
           </div>

@@ -14,7 +14,7 @@ const HeroSection = () => {
             src={Shoes}
             alt="Shoes Collection"
             className="rounded-lg"
-            width={288}  // Default width for mobile
+            width={288} // Default width for mobile
             height={180} // Height for all views
             sizes="(max-width: 767px) 288px, (min-width: 768px) 268px, (min-width: 1024px) 424px"
           />
@@ -26,7 +26,7 @@ const HeroSection = () => {
             src={Home}
             alt="Home Collection"
             className="rounded-lg"
-            width={288}  // Default width for mobile
+            width={288} // Default width for mobile
             height={180} // Height for all views
             sizes="(max-width: 767px) 288px, (min-width: 768px) 268px, (min-width: 1024px) 424px"
           />
@@ -38,7 +38,7 @@ const HeroSection = () => {
             src={Art}
             alt="Art Collection"
             className="rounded-lg"
-            width={288}  // Default width for mobile
+            width={288} // Default width for mobile
             height={180} // Height for all views
             sizes="(max-width: 767px) 288px, (min-width: 768px) 268px, (min-width: 1024px) 424px"
           />
