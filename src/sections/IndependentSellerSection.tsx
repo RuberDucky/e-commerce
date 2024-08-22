@@ -177,7 +177,7 @@ const IndependentSellerSection: React.FC = () => {
             <IndependentSellerCard
               imageSrc={seller.imageSrc}
               title={seller.title}
-              imageSize={120} // Image size
+              imageSize={120}
             />
           </div>
         ))}
