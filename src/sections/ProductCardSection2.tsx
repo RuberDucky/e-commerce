@@ -5,7 +5,7 @@ import sofaImg from "@/assets/sofa.svg";
 import chairImg from "@/assets/chair.svg";
 import lampImg from "@/assets/lamp.svg";
 
-const ProductShowcaseTwo: React.FC = () => {
+const ProductShowcase: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -95,4 +95,4 @@ const ProductShowcaseTwo: React.FC = () => {
   );
 };
 
-export default ProductShowcaseTwo;
+export default ProductShowcase;

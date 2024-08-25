@@ -3,6 +3,7 @@ import { Header } from "@/sections/Header";
 import HeroSection from "@/sections/Hero";
 import IndependentSellerSection from "@/sections/IndependentSellerSection";
 import MarketPlaceSection from "@/sections/MarketPlaceCardSection";
+import ProductShowcaseTwo from "@/sections/ProductCardSection2";
 import ProductShowcase from "@/sections/ProductCardSection";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <MarketPlaceSection />
       <IndependentSellerSection />
       <HandPickItemsSection />
+      <ProductShowcaseTwo />
     </>
   );
 }
