@@ -28,6 +28,12 @@ const ProductShowcase: React.FC = () => {
       title: "Vonna Neva Walnut Sandalye Chair",
       price: "195,13 $",
     },
+    {
+      imageSrc: lampImg,
+      bgColor: "#FBD9D9",
+      title: "Vonna Neva Walnut Sandalye Chair",
+      price: "195,13 $",
+    },
   ];
 
   const handleScroll = () => {
