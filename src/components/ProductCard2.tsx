@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 
+
+// Products Card for Homepage
+
 interface ProductCardProps {
   imageSrc: string;
   bgColor: string;
